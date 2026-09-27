@@ -88,10 +88,6 @@ function register_widgets() {
  */
 function jcd_enqueue_scripts() {
 	$css_ver = gmdate( 'ymd-Gis', filemtime( get_stylesheet_directory() . '/style.css' ) );
-	$js_ver  = gmdate( 'ymd-Gis', filemtime( get_stylesheet_directory() . '/js/toc.js' ) );
-
-	wp_enqueue_script( 'universal.toc', get_template_directory_uri() . '/js/toc.js', array(), $js_ver );
-	wp_enqueue_style( 'jcd-fonts', 'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap' );
 	wp_enqueue_style( 'jcd-style', get_stylesheet_uri(), array( 'jcd-fonts', 'dashicons' ), $css_ver );
 }
 add_action( 'wp_enqueue_scripts', 'jcd_enqueue_scripts' );
